@@ -10,7 +10,7 @@ import {
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-axios.defaults.baseURL = "https://trugpt-backend.onrender.com/api/v1"
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 axios.defaults.withCredentials = true;
 
 export const UserAuth = createContext({
