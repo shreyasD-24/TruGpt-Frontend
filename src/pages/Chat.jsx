@@ -47,13 +47,16 @@ const Chat = () => {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={clearConversation}
-        className="text-white xs:hidden mt-2 bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br text-md rounded-md flex ml-auto mr-8 text-sm px-1 py-1 text-center"
-      >
-        Clear Chat
-      </button>
+      {chats.length != 0 ? (
+        <button
+          type="button"
+          onClick={clearConversation}
+          className="text-white xs:hidden mt-2 bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br text-md rounded-md flex ml-auto mr-8 text-sm px-1 py-1 text-center"
+        >
+          Clear Chat
+        </button>
+      ) : null}
+
       <div className="flex my-10">
         <div className="xs:w-[25%] max-xs:hidden h-[60vh] sticky top-32 items-center flex flex-col bg-slate-800 ml-10 rounded-2xl">
           <div className="inline-flex items-center justify-center w-14 h-14 overflow-hidden bg-[rgb(255,255,255,1)] rounded-full mt-8">
