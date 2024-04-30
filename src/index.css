@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    html {
+      font-family: "Roboto Slab", sans-serif;
+    }
+  }
+
+
+::-webkit-scrollbar{
+  width: 0.5rem;
+}
+
+.library::-webkit-scrollbar-track{
+  background: none;        
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: hsla(0,0%,100%,.3);  
+  border-radius: 2rem; 
+}
