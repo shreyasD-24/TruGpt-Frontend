@@ -66,18 +66,19 @@ export default function UserAuthProvider({ children }) {
 
   useEffect(() => {
     let checkStatus = async () => {
+      toast.loading("Connecting to Server", { id: "server" });
       let data = await checkAuthStatus();
       if (data) {
         setUser({ name: data.name, email: data.email });
         setIsLoggedIn(true);
       }
+      toast.success("Connected to Server", { id: "server" });
     };
 
-    toast.loading("Connecting to Server", { id: "server" });
     checkStatus().catch((err) => {
+      toast.success("Connected to Server", { id: "server" });
       toast.error(err.message, { id: "authenticate" });
     });
-    toast.success("Connected to Server", { id: "server" });
   }, []);
 
   return (
