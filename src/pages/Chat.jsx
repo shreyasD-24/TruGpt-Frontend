@@ -35,8 +35,10 @@ const Chat = () => {
 
   useEffect(() => {
     async function getChatHelper() {
+      toast.loading("Loading Chats", { id: "chat" });
       let data = await getChats();
       setChats(data);
+      toast.success("Chats Loaded", { id: "chat" });
     }
     if (!isLoggedIn) {
       navigate("/home");

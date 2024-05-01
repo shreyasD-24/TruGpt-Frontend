@@ -73,9 +73,11 @@ export default function UserAuthProvider({ children }) {
       }
     };
 
+    toast.loading("Connecting to Server", { id: "server" });
     checkStatus().catch((err) => {
       toast.error(err.message, { id: "authenticate" });
     });
+    toast.success("Connected to Server", { id: "server" });
   }, []);
 
   return (
