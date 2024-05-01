@@ -24,8 +24,11 @@ export async function checkAuthStatus(){
     let res = await axios.get("/user/auth-status").catch((err)=>{
         throw new Error("Authentication Failed");
     });
-    if(res.status !== 200){
+    if(res.status != 200 && res.status != 204){
         throw new Error("Authentication Failed");
+    }
+    else if(res.status == 204){
+        return null;
     }
     let data = await res.data;
     return data;
